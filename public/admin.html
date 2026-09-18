@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owner Portal - PW Helpline Robertsganj Leads & Inquiries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <style>
+    :root {
+      --bg: #070a12;
+      --card: #0f172a;
+      --border: rgba(255, 255, 255, 0.1);
+      --gold: #f59e0b;
+      --cyan: #06b6d4;
+      --green: #10b981;
+      --red: #ef4444;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+      min-height: 100vh;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-badge {
+      background: var(--gold);
+      color: #000;
+      font-weight: 900;
+      font-family: 'Outfit', sans-serif;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--cyan);
+    }
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn:hover { background: rgba(255, 255, 255, 0.12); }
+    .btn-green { background: #059669; border-color: #059669; }
+    .btn-green:hover { background: #10b981; }
+    .btn-gold { background: #d97706; border-color: #d97706; color: #000; font-weight: 700; }
+    .btn-gold:hover { background: #f59e0b; }
+    .btn-danger { background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); color: #f87171; }
+    .btn-danger:hover { background: #ef4444; color: #fff; }
+
+    /* Login Overlay */
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 10, 18, 0.95);
+      backdrop-filter: blur(16px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .login-card {
+      background: #0f172a;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 16px;
+      padding: 36px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(245, 158, 11, 0.15);
+      text-align: center;
+    }
+    .login-lock-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: 0 auto 16px;
+    }
+    .login-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .login-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .login-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    .login-input:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+    }
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .login-btn:hover {
+      filter: brightness(1.1);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    }
+    .login-error {
+      color: #f87171;
+      font-size: 0.82rem;
+      margin-top: 12px;
+      display: none;
+    }
+    .login-hint {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .stat-card .num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .stat-card .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--cyan);
+    }
+
+    /* Table Container */
+    .table-container {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    th, td {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    th {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+    tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .badge-course { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .badge-scholarship { background: rgba(245, 158, 11, 0.2); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.4); }
+    .action-btns {
+      display: flex;
+      gap: 8px;
+    }
+    .action-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 0.85rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-call { background: rgba(16, 185, 129, 0.2); color: var(--green); border: 1px solid rgba(16, 185, 129, 0.4); }
+    .btn-call:hover { background: var(--green); color: #000; }
+    .btn-wa { background: rgba(37, 211, 102, 0.2); color: #25d366; border: 1px solid rgba(37, 211, 102, 0.4); }
+    .btn-wa:hover { background: #25d366; color: #000; }
+    .btn-del { background: rgba(239, 68, 68, 0.2); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.4); }
+    .btn-del:hover { background: var(--red); color: #fff; }
+
+    .empty-state {
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Secure Login Overlay -->
+  <div class="login-overlay" id="login-overlay">
+    <div class="login-card">
+      <div class="login-lock-icon"><i class="fa-solid fa-lock"></i></div>
+      <h2 class="login-title">Director / Owner Login</h2>
+      <p class="login-sub">Enter passkey to view student inquiries & leads</p>
+      <form id="login-form">
+        <input type="password" id="login-pass" class="login-input" placeholder="Enter Passcode..." required autofocus />
+        <button type="submit" class="login-btn" id="login-submit-btn">Unlock Leads Portal</button>
+      </form>
+      <p class="login-error" id="login-error">Incorrect Password! Please try again.</p>
+      <p class="login-hint"><i class="fa-solid fa-key"></i> Default Passkey: <strong>pw2026</strong></p>
+    </div>
+  </div>
+
+  <!-- Main Dashboard (revealed after login) -->
+  <div id="dashboard-content" style="display: none;">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-badge">PW</div>
+        <div>
+          <h1 class="brand-title">Robertsganj Center Leads Panel</h1>
+          <span class="brand-sub">Real-Time Student Counseling & NSAT Inquiry Monitor</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn" id="refresh-btn"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
+        <button class="btn btn-gold" id="export-btn"><i class="fa-solid fa-file-excel"></i> Export CSV</button>
+        <a href="/" class="btn" target="_blank"><i class="fa-solid fa-globe"></i> View Website</a>
+        <button class="btn btn-danger" id="logout-btn" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+      </div>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="num" id="stat-total">0</div>
+        <div class="label">Total Student Inquiries</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" style="color: var(--cyan);" id="stat-enquiries">0</div>
+        <div class="label">Counseling Callbacks</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" style="color: var(--gold);" id="stat-scholarships">0</div>
+        <div class="label">NSAT Scholarships (Up to 90%)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" style="color: var(--green);" id="stat-phone">074288 90305</div>
+        <div class="label">Center Owner Helpline</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="counseling"><i class="fa-solid fa-headset"></i> Counseling Requests (<span id="count-enq">0</span>)</button>
+      <button class="tab-btn" data-tab="scholarship"><i class="fa-solid fa-graduation-cap"></i> NSAT Scholarship Registrations (<span id="count-sch">0</span>)</button>
+    </div>
+
+    <!-- Counseling Table -->
+    <div class="table-container" id="tab-counseling-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Student Name</th>
+            <th>Phone Number</th>
+            <th>Target Course</th>
+            <th>Year</th>
+            <th>Student Question / Notes</th>
+            <th>Quick Actions</th>
+          </tr>
+        </thead>
+        <tbody id="enquiries-tbody">
+          <tr><td colspan="7" class="empty-state">Loading student enquiries...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Scholarship Table -->
+    <div class="table-container" id="tab-scholarship-content" style="display: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Student Name</th>
+            <th>Phone Number</th>
+            <th>Current Class</th>
+            <th>Target Exam</th>
+            <th>Prev Score</th>
+            <th>Qualified %</th>
+            <th>Quick Actions</th>
+          </tr>
+        </thead>
+        <tbody id="scholarship-tbody">
+          <tr><td colspan="8" class="empty-state">Loading scholarship requests...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let currentLeads = { enquiries: [], scholarships: [] };
+    let previousCount = 0;
+    let adminToken = localStorage.getItem('pw_admin_token') || '';
+
+    const loginOverlay = document.getElementById('login-overlay');
+    const dashboardContent = document.getElementById('dashboard-content');
+    const loginForm = document.getElementById('login-form');
+    const loginPass = document.getElementById('login-pass');
+    const loginError = document.getElementById('login-error');
+    const loginSubmitBtn = document.getElementById('login-submit-btn');
+
+    // Login Form Handler
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      loginError.style.display = 'none';
+      loginSubmitBtn.disabled = true;
+      loginSubmitBtn.textContent = 'Verifying...';
+
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: loginPass.value })
+        });
+        const data = await res.json();
+        loginSubmitBtn.disabled = false;
+        loginSubmitBtn.textContent = 'Unlock Leads Portal';
+
+        if (data.success) {
+          adminToken = data.token;
+          localStorage.setItem('pw_admin_token', adminToken);
+          revealDashboard();
+          loadLeads();
+        } else {
+          loginError.textContent = data.error || 'Incorrect Password!';
+          loginError.style.display = 'block';
+        }
+      } catch (err) {
+        loginSubmitBtn.disabled = false;
+        loginSubmitBtn.textContent = 'Unlock Leads Portal';
+        loginError.textContent = 'Server error. Please try again.';
+        loginError.style.display = 'block';
+      }
+    });
+
+    // Logout Handler
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('pw_admin_token');
+      adminToken = '';
+      dashboardContent.style.display = 'none';
+      loginOverlay.style.display = 'flex';
+      loginPass.value = '';
+    });
+
+    function revealDashboard() {
+      loginOverlay.style.display = 'none';
+      dashboardContent.style.display = 'block';
+    }
+
+    // Auto-check existing token on load
+    if (adminToken) {
+      revealDashboard();
+      loadLeads();
+    }
+
+    async function loadLeads() {
+      if (!adminToken) return;
+
+      try {
+        const res = await fetch('/api/admin/leads', {
+          headers: { 'x-admin-token': adminToken }
+        });
+        if (res.status === 401) {
+          localStorage.removeItem('pw_admin_token');
+          adminToken = '';
+          dashboardContent.style.display = 'none';
+          loginOverlay.style.display = 'flex';
+          return;
+        }
+
+        const data = await res.json();
+        if (data.success) {
+          currentLeads = data;
+          renderStats(data.summary);
+          renderEnquiries(data.enquiries);
+          renderScholarships(data.scholarships);
+
+          if (previousCount > 0 && data.summary.totalLeads > previousCount) {
+            playNewLeadAlert();
+          }
+          previousCount = data.summary.totalLeads;
+        }
+      } catch (err) {
+        console.error('Failed to load leads:', err);
+      }
+    }
+
+    function renderStats(summary) {
+      document.getElementById('stat-total').textContent = summary.totalLeads;
+      document.getElementById('stat-enquiries').textContent = summary.totalEnquiries;
+      document.getElementById('stat-scholarships').textContent = summary.totalScholarships;
+      document.getElementById('count-enq').textContent = summary.totalEnquiries;
+      document.getElementById('count-sch').textContent = summary.totalScholarships;
+    }
+
+    function renderEnquiries(list) {
+      const tbody = document.getElementById('enquiries-tbody');
+      if (!list.length) {
+        tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No counseling requests yet.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = list.map(item => {
+        const time = new Date(item.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'short', timeStyle: 'short' });
+        const cleanPhone = item.phone.replace(/[^0-9]/g, '');
+        const waMsg = encodeURIComponent(`Hello ${item.name}! This is Physics Wallah Coaching Helpline Robertsganj regarding your inquiry for ${item.course}. How can we assist you with admissions and fee details?`);
+        return `
+          <tr>
+            <td><small>${time}</small></td>
+            <td><strong>${escapeHtml(item.name)}</strong></td>
+            <td><a href="tel:${cleanPhone}" style="color: #60a5fa; text-decoration: none; font-weight: 700;">${escapeHtml(item.phone)}</a></td>
+            <td><span class="badge badge-course">${escapeHtml(item.course)}</span></td>
+            <td>${escapeHtml(item.targetYear || '2026')}</td>
+            <td><span style="color: #cbd5e1;">${escapeHtml(item.message || '—')}</span></td>
+            <td>
+              <div class="action-btns">
+                <a href="tel:${cleanPhone}" class="action-btn btn-call" title="Call Student"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/91${cleanPhone}?text=${waMsg}" target="_blank" class="action-btn btn-wa" title="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
+                <button onclick="deleteLead('enquiry', '${item.id}')" class="action-btn btn-del" title="Delete"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function renderScholarships(list) {
+      const tbody = document.getElementById('scholarship-tbody');
+      if (!list.length) {
+        tbody.innerHTML = '<tr><td colspan="8" class="empty-state">No NSAT scholarship submissions yet.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = list.map(item => {
+        const time = new Date(item.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'short', timeStyle: 'short' });
+        const cleanPhone = item.phone.replace(/[^0-9]/g, '');
+        const waMsg = encodeURIComponent(`Hello ${item.studentName}! Congratulations from Physics Wallah Robertsganj! Based on your score of ${item.prevPercentage}%, you have qualified for up to ${item.estimatedScholarshipPercent}% NSAT Scholarship for ${item.targetExam}!`);
+        return `
+          <tr>
+            <td><small>${time}</small></td>
+            <td><strong>${escapeHtml(item.studentName)}</strong></td>
+            <td><a href="tel:${cleanPhone}" style="color: #60a5fa; text-decoration: none; font-weight: 700;">${escapeHtml(item.phone)}</a></td>
+            <td>${escapeHtml(item.currentClass)}</td>
+            <td><span class="badge badge-course">${escapeHtml(item.targetExam)}</span></td>
+            <td><strong>${item.prevPercentage}%</strong></td>
+            <td><span class="badge badge-scholarship">${item.estimatedScholarshipPercent}% Off</span></td>
+            <td>
+              <div class="action-btns">
+                <a href="tel:${cleanPhone}" class="action-btn btn-call" title="Call Student"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/91${cleanPhone}?text=${waMsg}" target="_blank" class="action-btn btn-wa" title="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
+                <button onclick="deleteLead('scholarship', '${item.id}')" class="action-btn btn-del" title="Delete"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function deleteLead(type, id) {
+      if (!confirm('Are you sure you want to remove this lead?')) return;
+      await fetch(`/api/admin/leads/${type}/${id}`, {
+        method: 'DELETE',
+        headers: { 'x-admin-token': adminToken }
+      });
+      loadLeads();
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[m]);
+    }
+
+    function playNewLeadAlert() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.frequency.setValueAtTime(587.33, ctx.currentTime);
+        osc.frequency.setValueAtTime(880, ctx.currentTime + 0.15);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.4);
+      } catch (e) {}
+    }
+
+    // Tabs Switcher
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tab = btn.dataset.tab;
+        document.getElementById('tab-counseling-content').style.display = tab === 'counseling' ? 'block' : 'none';
+        document.getElementById('tab-scholarship-content').style.display = tab === 'scholarship' ? 'block' : 'none';
+      });
+    });
+
+    document.getElementById('refresh-btn').addEventListener('click', loadLeads);
+
+    // Export to CSV
+    document.getElementById('export-btn').addEventListener('click', () => {
+      let csv = "Type,Name,Phone,Course_or_Class,Target,Score_or_Note,Time\n";
+      currentLeads.enquiries.forEach(e => {
+        csv += `Counseling,"${e.name}","${e.phone}","${e.course}","${e.targetYear}","${(e.message || '').replace(/"/g, '""')}","${e.createdAt}"\n`;
+      });
+      currentLeads.scholarships.forEach(s => {
+        csv += `Scholarship,"${s.studentName}","${s.phone}","${s.currentClass}","${s.targetExam}","${s.prevPercentage}% (Awarded ${s.estimatedScholarshipPercent}%)","${s.createdAt}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `PW_Robertsganj_Leads_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+    });
+
+    setInterval(loadLeads, 12000);
+  </script>
+</body>
+</html>

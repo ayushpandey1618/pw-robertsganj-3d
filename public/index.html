@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics Wallah Coaching Helpline Robertsganj | IIT JEE & NEET Classes</title>
+  <meta name="description" content="Physics Wallah Coaching Helpline Robertsganj. IIT JEE, NEET UG Coaching Classes, NSAT Scholarship Test up to 90%, offline AITS, Vidyapeeth admission support at Tagore Nagar, Robertsganj." />
+  <meta name="keywords" content="Physics Wallah Robertsganj, PW Helpline Robertsganj, IIT JEE Coaching Robertsganj, NEET Coaching Robertsganj, PW NSAT, Tagore Nagar Robertsganj 231216" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Physics Wallah Coaching Helpline Robertsganj" />
+  <meta property="og:description" content="Official Helpline for IIT JEE & NEET Coaching at Tagore Nagar, Robertsganj. Call 074288 90305." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons (FontAwesome CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css" />
+  
+  <!-- Three.js (CDN for WebGL 3D rendering) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="dark-theme">
+  <!-- 3D Canvas Background Container -->
+  <div id="canvas-container" aria-hidden="true"></div>
+
+  <!-- Top Floating Notification Bar -->
+  <aside class="top-banner">
+    <div class="banner-content">
+      <span class="live-indicator"><span class="pulse-dot"></span> <span data-i18n="open24">Open 24 Hours Helpline Center</span></span>
+      <span class="banner-sep">|</span>
+      <span class="banner-highlight"><i class="fa-solid fa-bolt text-gold"></i> <span data-i18n="bannerNsat">PW NSAT Scholarship Test: Win Up to 90% Scholarship!</span></span>
+      <a href="#scholarship" class="banner-link" data-i18n="applyNow">Check Eligibility &rarr;</a>
+    </div>
+    <div class="banner-controls">
+      <!-- Owner Portal Link -->
+      <a href="/admin" target="_blank" class="icon-btn" title="Counselor & Owner Leads Portal" style="text-decoration: none; color: var(--pw-gold);"><i class="fa-solid fa-user-shield"></i> Owner Portal</a>
+      <!-- Audio Toggle -->
+      <button id="audio-toggle" class="icon-btn" title="Toggle Sound FX" aria-label="Toggle Sound Effects">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+      <!-- Language Switcher -->
+      <button id="lang-toggle" class="lang-switch-btn" aria-label="Switch Language">
+        <span class="lang-current">ENG</span> / <span class="lang-alt">हिंदी</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-orb">
+          <span class="logo-pw">PW</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">PHYSICS WALLAH</span>
+          <span class="brand-sub">Helpline • Robertsganj</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#about" class="nav-item" data-i18n="navAbout">About Center</a>
+        <a href="#results" class="nav-item" data-i18n="navResults">AIR Results</a>
+        <a href="#courses" class="nav-item" data-i18n="navCourses">Batches & AITS</a>
+        <a href="#scholarship" class="nav-item" data-i18n="navScholarship">NSAT (90%)</a>
+        <a href="#reviews" class="nav-item" data-i18n="navReviews">Reviews (3.6★)</a>
+        <a href="#location" class="nav-item" data-i18n="navLocation">Directions</a>
+      </nav>
+
+      <div class="nav-cta-group">
+        <a href="tel:07428890305" class="cta-call-btn" title="Call Helpline Now">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>074288 90305</span>
+        </a>
+        <button id="open-enquiry-modal" class="cta-glow-btn" data-i18n="getCall">
+          <i class="fa-solid fa-headset"></i> Request Callback
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <div class="badge-pill">
+        <i class="fa-solid fa-certificate text-gold"></i>
+        <span data-i18n="heroBadge">Official Robertsganj Helpline & Guidance Center</span>
+      </div>
+
+      <h1 class="hero-heading">
+        <span data-i18n="heroTitle1">Crack IIT JEE & NEET With</span><br />
+        <span class="gradient-text" data-i18n="heroTitle2">Physics Wallah Robertsganj</span>
+      </h1>
+
+      <p class="hero-subheading" data-i18n="heroDesc">
+        Your trusted admission helpline & offline guidance hub in Sonbhadra. Prepare for NEET UG 2026/2027 & JEE Advanced with India's most beloved educators, personalized study plans, offline AITS test series, and up to 90% NSAT scholarships.
+      </p>
+
+      <div class="hero-action-buttons">
+        <a href="tel:07428890305" class="btn-primary-glow">
+          <i class="fa-solid fa-phone-flip"></i>
+          <span data-i18n="heroCallNow">Call Counselor: 074288 90305</span>
+        </a>
+        <a href="https://wa.me/917428890305?text=Hello%20Physics%20Wallah%20Robertsganj%20Helpline,%20I%20want%20information%20about%20IIT%20JEE%20and%20NEET%20coaching%20and%20NSAT%20scholarship" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span data-i18n="heroWhatsApp">WhatsApp Helpline</span>
+        </a>
+        <a href="#scholarship" class="btn-secondary-glass">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span data-i18n="heroNSATBtn">NSAT Scholarship (Up to 90%)</span>
+        </a>
+      </div>
+
+      <!-- Live Center Highlights -->
+      <div class="hero-stats-ribbon">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="stat-info">
+            <span class="stat-val" data-i18n="hero247">24 / 7</span>
+            <span class="stat-lbl" data-i18n="heroSupport">Active Helpline</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-star text-gold"></i></div>
+          <div class="stat-info">
+            <span class="stat-val">3.6 ★</span>
+            <span class="stat-lbl" data-i18n="heroReviews">14 Verified Reviews</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="stat-info">
+            <span class="stat-val">Tagore Nagar</span>
+            <span class="stat-lbl">Robertsganj 231216</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-percent text-cyan"></i></div>
+          <div class="stat-info">
+            <span class="stat-val">Up to 90%</span>
+            <span class="stat-lbl" data-i18n="heroDiscount">NSAT Scholarship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Interactive Kiosk Overlay HUD -->
+    <div class="hero-3d-hud" id="hud3d">
+      <div class="hud-tag">
+        <i class="fa-solid fa-atom fa-spin"></i>
+        <span>INTERACTIVE 3D PHYSICS LAB</span>
+      </div>
+      <p class="hud-instruction" data-i18n="hudHint">Click & drag to rotate the 3D Atomic Core • Click nodes to explore subjects</p>
+      
+      <div class="subject-chips">
+        <button class="subject-chip active" data-subject="physics"><i class="fa-solid fa-magnet"></i> Physics</button>
+        <button class="subject-chip" data-subject="chemistry"><i class="fa-solid fa-flask-vial"></i> Chemistry</button>
+        <button class="subject-chip" data-subject="biology"><i class="fa-solid fa-dna"></i> Biology</button>
+        <button class="subject-chip" data-subject="maths"><i class="fa-solid fa-square-root-variable"></i> Maths</button>
+      </div>
+
+      <div class="hud-card" id="hud-card">
+        <div class="hud-card-header">
+          <span class="hud-subject-name" id="hud-subject-name">Physics Masterclasses</span>
+          <span class="hud-badge" id="hud-exam-tag">NEET / JEE</span>
+        </div>
+        <p class="hud-subject-desc" id="hud-subject-desc">
+          Conceptual visualization from Mechanics to Electromagnetism & Modern Physics with real problem solving.
+        </p>
+        <button class="hud-btn" id="hud-explore-btn" data-i18n="exploreSyllabus">Explore Curriculum</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS & HALL OF FAME -->
+  <section class="results-section section-padding" id="results">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="resultsTag">PROVEN TRACK RECORD</span>
+        <h2 class="section-title">
+          <span data-i18n="resultsTitle">Our Recent Results</span> <span class="gradient-text" data-i18n="resultsTitle2">Speak Volumes</span>
+        </h2>
+        <p class="section-desc" data-i18n="resultsDesc">
+          PW students continue to create history across India. Prepare with our Robertsganj team to unlock your potential and secure top engineering & medical seats.
+        </p>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-box glow-gold">
+          <div class="result-number counter" data-target="53">0</div>
+          <div class="result-air" data-i18n="air1000">Students Under AIR 1,000</div>
+          <p class="result-sub" data-i18n="air1000Sub">Securing top AIIMS & premier IIT campuses nationwide.</p>
+          <div class="result-bar"><span style="width: 95%;"></span></div>
+        </div>
+
+        <div class="result-box glow-blue">
+          <div class="result-number"><span class="counter" data-target="197">0</span>+</div>
+          <div class="result-air" data-i18n="air2500">Achieved Under AIR 2,500</div>
+          <p class="result-sub" data-i18n="air2500Sub">Consistently breaking into premier government medical & NIT colleges.</p>
+          <div class="result-bar"><span style="width: 88%;"></span></div>
+        </div>
+
+        <div class="result-box glow-cyan">
+          <div class="result-number"><span class="counter" data-target="470">0</span>+</div>
+          <div class="result-air" data-i18n="air5000">Achieved Under AIR 5,000</div>
+          <p class="result-sub" data-i18n="air5000Sub">Remarkable score jumps with structured test series & revision.</p>
+          <div class="result-bar"><span style="width: 80%;"></span></div>
+        </div>
+
+        <div class="result-box glow-purple">
+          <div class="result-number"><span class="counter" data-target="1052">0</span>+</div>
+          <div class="result-air" data-i18n="air10000">Students Under AIR 10,000</div>
+          <p class="result-sub" data-i18n="air10000Sub">Enabling dreams of lakhs of tier-2 & tier-3 town aspirants.</p>
+          <div class="result-bar"><span style="width: 72%;"></span></div>
+        </div>
+
+        <div class="result-box glow-orange">
+          <div class="result-number"><span class="counter" data-target="2160">0</span>+</div>
+          <div class="result-air" data-i18n="air20000">Students Under AIR 20,000</div>
+          <p class="result-sub" data-i18n="air20000Sub">Proven methodologies delivered right here in Robertsganj.</p>
+          <div class="result-bar"><span style="width: 65%;"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NSAT SCHOLARSHIP CALCULATOR -->
+  <section class="scholarship-section section-padding" id="scholarship">
+    <div class="container">
+      <div class="scholarship-card">
+        <div class="scholarship-badge">
+          <i class="fa-solid fa-award"></i> PW NSAT 2026 - Robertsganj
+        </div>
+        
+        <div class="scholarship-grid">
+          <div class="scholarship-info">
+            <h2 class="scholarship-title">
+              <span data-i18n="nsatTitle">Physics Wallah Scholarship</span><br />
+              <span class="gradient-text" data-i18n="nsatSub">Cum Admission Test (NSAT)</span>
+            </h2>
+            <p data-i18n="nsatText">
+              Don't miss out on scholarship opportunities of <strong>up to 90%</strong> on tuition fees! Evaluate your potential, win cash rewards, and kickstart your preparation with India's best educators.
+            </p>
+
+            <ul class="benefit-list">
+              <li><i class="fa-solid fa-circle-check text-gold"></i> <span data-i18n="nsatB1">Up to 90% Fee Waiver for Robertsganj & Sonbhadra students</span></li>
+              <li><i class="fa-solid fa-circle-check text-gold"></i> <span data-i18n="nsatB2">Available for Class 8th to 12th & 12th Passed (Dropper)</span></li>
+              <li><i class="fa-solid fa-circle-check text-gold"></i> <span data-i18n="nsatB3">Both Online & Center Offline Guidance available</span></li>
+              <li><i class="fa-solid fa-circle-check text-gold"></i> <span data-i18n="nsatB4">National Level Benchmarking with AIR projection</span></li>
+            </ul>
+
+            <div class="scholarship-contact">
+              <span data-i18n="needHelp">Need guidance regarding NSAT syllabus or offline test registration?</span>
+              <a href="tel:07428890305" class="phone-link"><i class="fa-solid fa-phone"></i> 074288 90305</a>
+            </div>
+          </div>
+
+          <!-- Interactive Calculator Form -->
+          <div class="calculator-panel">
+            <div class="calc-header">
+              <h3 data-i18n="calcHeading">Calculate Your Estimated Scholarship</h3>
+              <p data-i18n="calcSub">Instant eligibility estimation based on your academic profile</p>
+            </div>
+
+            <form id="scholarship-calc-form" class="calc-form">
+              <div class="form-group">
+                <label for="calc-name" data-i18n="lblName">Student Full Name *</label>
+                <input type="text" id="calc-name" name="studentName" placeholder="e.g. Kaustubh Dubey" required />
+              </div>
+
+              <div class="form-group">
+                <label for="calc-phone" data-i18n="lblPhone">Mobile Number (WhatsApp) *</label>
+                <input type="tel" id="calc-phone" name="phone" placeholder="e.g. 074288 90305" pattern="[0-9]{10,12}" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="calc-class" data-i18n="lblClass">Current Grade / Class</label>
+                  <select id="calc-class" name="currentClass">
+                    <option value="Class 11th">Class 11th (Target 2027)</option>
+                    <option value="Class 12th" selected>Class 12th (Target 2026)</option>
+                    <option value="12th Pass / Dropper">12th Pass (Dropper Batch)</option>
+                    <option value="Class 9th / 10th">Foundation (9th / 10th)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="calc-target" data-i18n="lblTarget">Target Exam</label>
+                  <select id="calc-target" name="targetExam">
+                    <option value="NEET UG">NEET UG (Medical)</option>
+                    <option value="IIT JEE">IIT JEE Main & Adv (Engineering)</option>
+                    <option value="Both / Foundation">Olympiads / Foundation</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="slider-label-row">
+                  <label for="score-slider" data-i18n="lblScore">Previous Academic Score (%):</label>
+                  <span id="score-display" class="score-pill">85%</span>
+                </div>
+                <input type="range" id="score-slider" name="prevPercentage" min="50" max="100" value="85" class="range-slider" />
+              </div>
+
+              <button type="submit" class="btn-calculate" id="calc-submit-btn">
+                <i class="fa-solid fa-calculator"></i> <span data-i18n="btnCalc">Calculate Scholarship & Claim Coupon</span>
+              </button>
+            </form>
+
+            <div id="calc-result" class="calc-result-box hidden">
+              <div class="result-congrats">
+                <i class="fa-solid fa-trophy text-gold"></i>
+                <div>
+                  <h4 data-i18n="scholarshipQualified">You Qualify For:</h4>
+                  <div class="discount-number" id="discount-output">Up to 75% Scholarship</div>
+                </div>
+              </div>
+              <p class="coupon-msg" id="coupon-msg">
+                Your Robertsganj counseling ticket has been reserved! Present this voucher at our Tagore Nagar center or via helpline.
+              </p>
+              <div class="ticket-badge" id="ticket-badge">ID: NSAT-READY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES, BATCHES & OFFLINE TEST SERIES -->
+  <section class="courses-section section-padding" id="courses">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="coursesTag">COMPREHENSIVE ADMISSION PROGRAMS</span>
+        <h2 class="section-title">
+          <span data-i18n="coursesTitle">Programs Available at</span> <span class="gradient-text" data-i18n="coursesTitle2">Robertsganj Helpline</span>
+        </h2>
+        <p class="section-desc" data-i18n="coursesDesc">
+          Guidance for online batches, offline Vidyapeeth counseling, and All India Test Series (AITS).
+        </p>
+      </div>
+
+      <div class="courses-grid">
+        <!-- NEET UG Card -->
+        <div class="course-card">
+          <div class="course-banner neet-banner">
+            <span class="course-tag">NEET UG 2026 / 2027</span>
+            <h3>Yakeen & Lakshya NEET</h3>
+          </div>
+          <div class="course-body">
+            <p class="course-summary">
+              Exclusively crafted for Medical aspirants. Complete NCERT mastery, daily practice problems (DPP), live doubt resolution, and dedicated AIIMS alumni mentorship.
+            </p>
+            <ul class="course-features">
+              <li><i class="fa-solid fa-check text-cyan"></i> Complete Biology, Physics & Chemistry Coverage</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> 24/7 Doubt Engine & Video Solutions</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Offline AITS (All India Test Series) Option</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Special Robertsganj helpline counseling</li>
+            </ul>
+            <div class="course-footer">
+              <button class="btn-enroll trigger-enquiry" data-course="NEET UG 2026" data-i18n="btnEnquire">Enquire Now &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- IIT JEE Card -->
+        <div class="course-card">
+          <div class="course-banner jee-banner">
+            <span class="course-tag">IIT JEE MAIN + ADVANCED</span>
+            <h3>Prayas & Arjuna JEE</h3>
+          </div>
+          <div class="course-body">
+            <p class="course-summary">
+              Rigorous problem solving, deep conceptual lectures, advanced computer-based test (CBT) practice, and high-yield formula modules for JEE aspirants.
+            </p>
+            <ul class="course-features">
+              <li><i class="fa-solid fa-check text-gold"></i> Mathematics, Physics & Physical/Organic Chemistry</li>
+              <li><i class="fa-solid fa-check text-gold"></i> Previous 15 Years JEE Questions Decoded</li>
+              <li><i class="fa-solid fa-check text-gold"></i> All India Rank Predictor & Detailed Analytics</li>
+              <li><i class="fa-solid fa-check text-gold"></i> Hybrid Counseling & Test Support</li>
+            </ul>
+            <div class="course-footer">
+              <button class="btn-enroll trigger-enquiry" data-course="IIT JEE 2026" data-i18n="btnEnquire">Enquire Now &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offline AITS & Vidyapeeth Support Card -->
+        <div class="course-card highlight-card">
+          <div class="course-banner vidyapeeth-banner">
+            <span class="course-tag">OFFLINE TEST SERIES & COUNSELING</span>
+            <h3>PW AITS & Vidyapeeth Helpline</h3>
+          </div>
+          <div class="course-body">
+            <p class="course-summary">
+              Get direct clarity on Vidyapeeth center admissions, nearby test centers for Robertsganj students, OMR-based offline test mock exams, and scholarship desk.
+            </p>
+            <ul class="course-features">
+              <li><i class="fa-solid fa-check text-purple"></i> Real OMR NEET/JEE Exam Hall Simulation</li>
+              <li><i class="fa-solid fa-check text-purple"></i> Direct assistance for Sonbhadra region students</li>
+              <li><i class="fa-solid fa-check text-purple"></i> One-on-one academic counselor appointments</li>
+              <li><i class="fa-solid fa-check text-purple"></i> Fee waiver verification & NSAT registration</li>
+            </ul>
+            <div class="course-footer">
+              <button class="btn-enroll trigger-enquiry" data-course="PW AITS & Vidyapeeth Helpline" data-i18n="btnEnquire">Enquire Now &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS & TRANSPARENCY SECTION -->
+  <section class="reviews-section section-padding" id="reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="reviewsTag">AUTHENTIC COMMUNITY REVIEWS</span>
+        <h2 class="section-title">
+          <span data-i18n="reviewsTitle">Verified Feedback from</span> <span class="gradient-text" data-i18n="reviewsTitle2">Robertsganj Students</span>
+        </h2>
+        <p class="section-desc" data-i18n="reviewsDesc">
+          Transparent student questions and official responses directly addressing Vidyapeeth admissions, offline AITS test series, and NSAT exam registration.
+        </p>
+      </div>
+
+      <div class="rating-overview-card">
+        <div class="rating-score-box">
+          <div class="rating-huge">3.6</div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="rating-count" data-i18n="ratingCount">14 Google Reviews</div>
+          <div class="rating-verified-tag"><i class="fa-solid fa-circle-check text-cyan"></i> Verified Helpline Profile</div>
+        </div>
+
+        <div class="rating-breakdown">
+          <div class="breakdown-row">
+            <span>5 ★</span>
+            <div class="progress-track"><div class="progress-fill" style="width: 50%;"></div></div>
+            <span>7</span>
+          </div>
+          <div class="breakdown-row">
+            <span>4 ★</span>
+            <div class="progress-track"><div class="progress-fill" style="width: 30%;"></div></div>
+            <span>4</span>
+          </div>
+          <div class="breakdown-row">
+            <span>3 ★</span>
+            <div class="progress-track"><div class="progress-fill" style="width: 10%;"></div></div>
+            <span>1</span>
+          </div>
+          <div class="breakdown-row">
+            <span>2 ★</span>
+            <div class="progress-track"><div class="progress-fill" style="width: 5%;"></div></div>
+            <span>1</span>
+          </div>
+          <div class="breakdown-row">
+            <span>1 ★</span>
+            <div class="progress-track"><div class="progress-fill" style="width: 5%;"></div></div>
+            <span>1</span>
+          </div>
+        </div>
+
+        <div class="rating-action">
+          <p data-i18n="reviewPrompt">Have questions about our Robertsganj center or want to share feedback?</p>
+          <a href="https://maps.google.com/?q=Tagore+Nagar,+Robertsganj,+Uttar+Pradesh+231216" target="_blank" rel="noopener noreferrer" class="btn-review">
+            <i class="fa-solid fa-pen-to-square"></i> <span data-i18n="writeReview">Write a Review on Google</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Real Reviews Cards -->
+      <div class="reviews-slider" id="reviews-container">
+        <!-- Review 1 -->
+        <article class="review-bubble">
+          <div class="review-author-row">
+            <div class="avatar-circle">KD</div>
+            <div class="author-meta">
+              <h4>Kaustubh Dubey</h4>
+              <div class="stars-mini">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span class="review-time">9 months ago</span>
+              </div>
+            </div>
+          </div>
+          <p class="review-quote">
+            "Can I take coaching classes from here like Vidyapeeth or is it just a helpline centre? If no, please let me know is there any future plan for Vidyapeeth in Robertsganj, Sonbhadra."
+          </p>
+          <div class="owner-reply">
+            <div class="reply-header">
+              <i class="fa-solid fa-reply"></i> <strong>Response from the owner:</strong>
+            </div>
+            <p>
+              "Dear Kaustubh Dubey, Thank you for reaching out! We are an authorized counseling and helpline support hub assisting students in Robertsganj with Vidyapeeth admissions, batch selection, offline AITS test series queries, and scholarship enrollments."
+            </p>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="review-bubble">
+          <div class="review-author-row">
+            <div class="avatar-circle">KD</div>
+            <div class="author-meta">
+              <h4>Kaustubh Dubey</h4>
+              <div class="stars-mini">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                <span class="review-time">a year ago</span>
+              </div>
+            </div>
+          </div>
+          <p class="review-quote">
+            "Can I register here for PW NSAT scholarship exam that is going to be held in October? Can I give exam offline at this center?"
+          </p>
+          <div class="owner-reply">
+            <div class="reply-header">
+              <i class="fa-solid fa-reply"></i> <strong>Response from the owner:</strong>
+            </div>
+            <p>
+              "Dear Kaustubh Dubey, Thank you for your interest in our NSAT scholarship exam. You can register for NSAT online or visit us for offline test guidance, syllabus booklet, and scholarship counseling."
+            </p>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="review-bubble">
+          <div class="review-author-row">
+            <div class="avatar-circle">SP</div>
+            <div class="author-meta">
+              <h4>Saziya Parween</h4>
+              <div class="stars-mini">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                <span class="review-time">a year ago</span>
+              </div>
+            </div>
+          </div>
+          <p class="review-quote">
+            "PW coaching in Robertsganj... Do you offer offline test series AITS for NEET?"
+          </p>
+          <div class="owner-reply">
+            <div class="reply-header">
+              <i class="fa-solid fa-reply"></i> <strong>Response from the owner:</strong>
+            </div>
+            <p>
+              "Dear Saziya Parween, Thank you for your inquiry. We provide complete orientation and support for PW All India Test Series (AITS) registration, schedule, and center allotments for NEET aspirants."
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & FAQ SECTION -->
+  <section class="location-section section-padding" id="location">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info-col">
+          <span class="section-tag" data-i18n="locTag">VISIT OR CALL</span>
+          <h2 class="section-title" data-i18n="locTitle">Robertsganj Center Location</h2>
+          
+          <div class="info-card">
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot info-icon"></i>
+              <div>
+                <strong data-i18n="addrLabel">Address:</strong>
+                <p>Tagore Nagar, Robertsganj, Uttar Pradesh 231216</p>
+                <span class="plus-code-badge"><i class="fa-solid fa-map-pin"></i> Plus Code: M3P8+GH Robertsganj, Uttar Pradesh</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-phone-volume info-icon"></i>
+              <div>
+                <strong data-i18n="phoneLabel">Helpline Phone:</strong>
+                <p><a href="tel:07428890305" class="hover-underline">074288 90305</a></p>
+                <span class="badge-status open-now" data-i18n="open24Hours">● Open 24 Hours (Direct Dial)</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-rainbow info-icon"></i>
+              <div>
+                <strong>Inclusivity:</strong>
+                <p>LGBTQ+ friendly counseling center & welcoming environment for all students.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-brands fa-whatsapp info-icon"></i>
+              <div>
+                <strong>WhatsApp Support:</strong>
+                <p><a href="https://wa.me/917428890305" target="_blank" rel="noopener noreferrer" class="hover-underline">+91 74288 90305</a> (Instant Chat)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-actions">
+            <a href="https://maps.google.com/?q=Tagore+Nagar,+Robertsganj,+Uttar+Pradesh+231216" target="_blank" rel="noopener noreferrer" class="btn-primary-glow">
+              <i class="fa-solid fa-diamond-turn-right"></i> <span data-i18n="getDirections">Get Directions on Maps</span>
+            </a>
+            <button class="btn-secondary-glass" id="share-center-btn">
+              <i class="fa-solid fa-share-nodes"></i> <span data-i18n="shareDetails">Share Center Details</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="faq-col">
+          <span class="section-tag" data-i18n="faqTag">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="section-title" data-i18n="faqTitle">Everything You Need to Know</h2>
+
+          <div class="faq-accordion">
+            <div class="faq-item active">
+              <button class="faq-question">
+                <span>Is this an offline Vidyapeeth classroom center or a helpline center?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>This is the official Physics Wallah Helpline & Counseling Centre for Robertsganj and the Sonbhadra district. We facilitate student admissions for PW Online batches, guide students for nearby Vidyapeeth offline centers, and assist with All India Test Series (AITS) registrations.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Can I give the NSAT exam offline from Robertsganj?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! Students can take the NSAT exam both online from home and at designated offline partner centers. Our helpline desk at Tagore Nagar assists with student registration, hall tickets, and syllabus material.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Are offline AITS (All India Test Series) available for NEET & JEE?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, PW offers offline All India Test Series with real OMR evaluation simulating the actual exam hall experience. Call our helpline at 074288 90305 to get enrolled for the upcoming AITS cycle.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What are the timings of this helpline center?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Our telephone and digital helpline operates 24 Hours. Walk-in counseling at Tagore Nagar is open throughout standard counseling hours, seven days a week.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-orb"><span class="logo-pw">PW</span></div>
+            <div class="brand-text">
+              <span class="brand-title">PHYSICS WALLAH</span>
+              <span class="brand-sub">Helpline • Robertsganj</span>
+            </div>
+          </div>
+          <p class="footer-motto">
+            Empowering every student in Robertsganj, Sonbhadra, and Uttar Pradesh with world-class, affordable education for IIT JEE & NEET.
+          </p>
+          <div class="social-links">
+            <a href="https://www.pw.live" target="_blank" rel="noopener noreferrer" aria-label="Official Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="https://wa.me/917428890305" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Helpline"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="tel:07428890305" aria-label="Call Helpline"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Helpline Info</h4>
+          <ul>
+            <li><i class="fa-solid fa-phone text-gold"></i> 074288 90305</li>
+            <li><i class="fa-solid fa-location-dot text-cyan"></i> Tagore Nagar, Robertsganj</li>
+            <li><i class="fa-solid fa-map text-purple"></i> UP 231216 (Plus Code: M3P8+GH)</li>
+            <li><i class="fa-solid fa-clock text-green"></i> Open 24 Hours</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Target Exams</h4>
+          <ul>
+            <li><a href="#courses">NEET UG 2026 / 2027</a></li>
+            <li><a href="#courses">IIT JEE (Main & Advanced)</a></li>
+            <li><a href="#courses">PW All India Test Series (AITS)</a></li>
+            <li><a href="#scholarship">PW NSAT (Up to 90% Scholarship)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Helpline Services</h4>
+          <ul>
+            <li><a href="#about" class="trigger-enquiry">Book Counseling Session</a></li>
+            <li><a href="#scholarship">Verify Scholarship Eligibility</a></li>
+            <li><a href="#location">Locate Nearest Center</a></li>
+            <li><a href="https://www.pw.live" target="_blank" rel="noopener noreferrer">Official pw.live Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Physics Wallah Coaching Helpline Robertsganj. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          Tagore Nagar, Robertsganj, Uttar Pradesh 231216. Dedicated student facilitation and counseling center for Sonbhadra district.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: REQUEST COUNSELING / CALLBACK -->
+  <div class="modal-backdrop" id="enquiry-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-badge"><i class="fa-solid fa-headset"></i> Robertsganj Center Desk</div>
+        <h3 id="modal-title" data-i18n="modalTitle">Request an Instant Callback</h3>
+        <p data-i18n="modalDesc">Speak directly with our Tagore Nagar senior counselor for NEET, JEE, or NSAT guidance.</p>
+      </div>
+
+      <form id="helpline-enquiry-form" class="modal-form">
+        <div class="form-group">
+          <label for="enq-name" data-i18n="lblName">Student's Full Name *</label>
+          <input type="text" id="enq-name" name="name" required placeholder="e.g. Saziya Parween" />
+        </div>
+
+        <div class="form-group">
+          <label for="enq-phone" data-i18n="lblPhone">Phone Number *</label>
+          <input type="tel" id="enq-phone" name="phone" required placeholder="e.g. 074288 90305" pattern="[0-9]{10,12}" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="enq-course" data-i18n="lblCourse">Interested Course</label>
+            <select id="enq-course" name="course">
+              <option value="NEET UG 2026">NEET UG 2026</option>
+              <option value="IIT JEE 2026">IIT JEE 2026</option>
+              <option value="PW AITS Test Series">PW AITS (Offline Test Series)</option>
+              <option value="NSAT Scholarship Test">PW NSAT Scholarship</option>
+              <option value="Vidyapeeth Admission Guidance">Vidyapeeth Guidance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="enq-year">Target Exam Year</label>
+            <select id="enq-year" name="targetYear">
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="enq-message">Your Question or Requirement (Optional)</label>
+          <textarea id="enq-message" name="message" rows="3" placeholder="e.g. Looking for offline AITS in Robertsganj or batch fees..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary-glow w-100" id="enquiry-submit-btn">
+          <i class="fa-solid fa-paper-plane"></i> <span data-i18n="btnSubmitCallback">Submit Counseling Request</span>
+        </button>
+      </form>
+
+      <div class="modal-footer-note">
+        <i class="fa-solid fa-lock"></i> Your information is kept confidential. Open 24 Hours Helpline: <strong>074288 90305</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive">
+    <div class="toast-icon" id="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-message" id="toast-msg">Action completed successfully.</div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/three-scene.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

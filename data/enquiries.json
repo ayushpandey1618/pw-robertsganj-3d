@@ -1,0 +1,33 @@
+[
+  {
+    "id": "ENQ-1789748445114",
+    "name": "Rajesh Tiwari",
+    "phone": "07428890305",
+    "email": "",
+    "course": "IIT JEE 2026",
+    "targetYear": "2026",
+    "message": "Need hostel information and test series schedule in Robertsganj",
+    "status": "Pending",
+    "createdAt": "2026-09-18T16:20:45.114Z"
+  },
+  {
+    "id": "ENQ-1789748177549",
+    "name": "AYUSH KUMAR PANDEY",
+    "phone": "6386278674",
+    "email": "",
+    "course": "NEET UG 2026",
+    "targetYear": "2026",
+    "message": "AYSUH",
+    "createdAt": "2026-09-18T16:16:17.549Z"
+  },
+  {
+    "id": "ENQ-1789747807291",
+    "name": "Aman Sharma",
+    "phone": "07428890305",
+    "email": "",
+    "course": "NEET UG 2026",
+    "targetYear": "2026",
+    "message": "Inquiring for offline AITS batch",
+    "createdAt": "2026-09-18T16:10:07.291Z"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "NSAT-1789748624146",
+    "studentName": "rohan",
+    "phone": "4174179219",
+    "currentClass": "Class 12th",
+    "targetExam": "NEET UG",
+    "prevPercentage": 85,
+    "estimatedScholarshipPercent": 65,
+    "status": "Qualified",
+    "createdAt": "2026-09-18T16:23:44.146Z"
+  },
+  {
+    "id": "NSAT-1789748033294",
+    "studentName": "Ayush",
+    "phone": "6386278674",
+    "currentClass": "Class 12th",
+    "targetExam": "NEET UG",
+    "prevPercentage": 85,
+    "estimatedScholarshipPercent": 65,
+    "createdAt": "2026-09-18T16:13:53.295Z"
+  },
+  {
+    "id": "NSAT-1789747801224",
+    "studentName": "Test Student",
+    "phone": "07428890305",
+    "currentClass": "Class 12th",
+    "targetExam": "NEET UG",
+    "prevPercentage": 92,
+    "estimatedScholarshipPercent": 80,
+    "createdAt": "2026-09-18T16:10:01.224Z"
+  }
+]
